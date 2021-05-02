@@ -1,0 +1,42 @@
+{% set assetHash = global.random() %}
+<!DOCTYPE html>
+<html lang="da">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		{% include "partials/site-meta.html" %}
+		<link rel="preload" href="/fonts/exo2-regular.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="/fonts/exo2-semibold.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="/fonts/exo2-bold.woff2" as="font" type="font/woff2" crossorigin>
+		<style>{% include "css/critical.css" %}{% include "css/tokens.css" %}{% block css %}{% endblock %}
+		</style>
+		{% if pageCriticalStyles %}
+			{% for item in pageCriticalStyles %}
+				<style>{% include item %}</style>
+			{% endfor %}
+		{% endif %}
+		{% if pageStylesheets %}
+			{% for item in pageStylesheets %}
+				<link rel="stylesheet" media="print" href="{{ item }}?{{ assetHash }}" onload="this.media='all'"/>
+			{% endfor %}
+		{% endif %}
+	</head>
+	<body>
+		{% include "partials/site-head.html" %}
+		<main class="container flow space-900">
+			{% block content %}{% endblock %}
+			<p class="h1 text-700 measure-micro-xl">{{ ctaText }}</p>
+		</main>
+		{% include "partials/site-foot.html" %}
+		<script defer>
+			{% include "js/main.js" %}
+			{% include "js/quicklink.js" %}
+			window.addEventListener('load', () => {
+			quicklink.listen({
+			ignores: [(uri, elem) => elem.hasAttribute('noprefetch')]
+			});
+			});
+		</script>
+	</body>
+</html>

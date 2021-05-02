@@ -1,0 +1,29 @@
+{% extends "layouts/base.html" %}
+{% set pageCriticalStyles = ['css/cases.css']%}
+
+{% set metaTitle = cases.meta.title %}
+{% set metaDesc = cases.meta.description %}
+
+{% set customColor = case.bgColor.hex %}
+{% set bannerTitle = case.headline or case.name %}
+{% set bannerSummary = case.summary %}
+{% set bannerImage = case.mainImage %}
+
+{% block css %}
+:root{
+    --primary-color: {{ customColor }}
+}
+{% endblock %}
+
+
+{% block content %}
+    {% include 'partials/banner.html' %}
+    <div>
+        <article class="page-content [ flow ] [ space-600 ]">
+        
+            {% if case.body %}
+                {{ case.body | markdownify | safe }}
+            {% endif %}
+        </article>
+    </div>
+{% endblock %}

@@ -1,0 +1,98 @@
+.site-foot {
+
+    &__top{
+
+        .newsletter{
+            display: flex;
+            flex-wrap: wrap;
+
+            &__content{
+                flex-basis: 0;
+                flex-grow: 999;
+                min-width: 45%;
+ 
+                form{
+                    border-top: 1px dashed get-color('light-shade');
+                    padding: get-size('400') 0 get-size('600') get-size('800');
+    
+                    label{
+                        display: flex;
+                        flex-direction: column;
+                        flex-grow: 1;
+                        flex-shrink: 1;
+                    }
+                }
+            }
+
+            &__image-wrapper{
+                position: relative;
+                flex-basis: 30rem;
+                min-height: 20rem;
+                flex-grow: 1;
+                // padding-bottom: 0 calc(var(--size-400) + var(--size-xl));
+
+                img{
+                    position: absolute;
+                    width: 100%;
+                    height: calc(100% + var(--size-xl));
+                    object-fit: cover;
+                    object-position: top center;
+                }
+            }
+        }
+    }
+
+    &__bottom{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr get-size('xl');
+        z-index: 10;
+
+        .inner-wrapper{
+            display: flex;
+            flex-direction: column;
+            // margin-top: calc(-1 * var(--size-xl));
+
+            @include media-query('md'){
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            hr{
+                border: none;
+                width: 100%;
+                height: 1px;
+                background-color: rgba(get-color('light-glare'), .06);
+                margin: get-size('600') 0;
+
+                @include media-query('md'){
+                    width: 1px;
+                    height: 100%;
+                    margin: 0 get-size('900');
+                }
+            }
+
+            .contact-info{
+                li{
+                    display: flex;
+                    flex-direction: column;
+
+                    a{
+                        font-size: get-size('400');
+                        @include apply-utility('weight', 'bold');
+                        @include apply-utility('leading', 'tight');
+                    }
+                }
+            }
+        }
+
+        .top-link{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: get-size('xl')
+        }
+    }
+  
+}

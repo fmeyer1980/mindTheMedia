@@ -1,0 +1,43 @@
+.page-content {
+  @include apply-utility('measure', 'mid');
+  @include apply-utility('leading', 'loose');
+
+  blockquote {
+    border-inline-start: .9rem solid get-color('primary');
+    padding-inline-start: get-size('500');
+    padding-top: get-size('200');
+    padding-bottom: get-size('200');
+    font-size: get-size('400');
+    font-style: italic;
+    @include apply-utility('leading', 'normal');
+    @include apply-utility('weight', 'bold');
+    --space: #{get-size('600')};
+  }
+
+  h2 {
+    font-size: get-size('500');
+  }
+
+  h3 {
+    font-size: get-size('400');
+  }
+
+  ol,
+  ul {
+    padding-inline-start: get-size('400');
+  }
+
+  li + li {
+    margin-top: get-size('100');
+  }
+
+  h2,
+  h3 {
+    --space: #{get-size('600')};
+  }
+
+  h2 + *,
+  h3 + * {
+    --space: #{get-size('200')};
+  }
+}

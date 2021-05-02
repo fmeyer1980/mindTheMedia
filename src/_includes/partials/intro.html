@@ -1,0 +1,14 @@
+<section class="intro [ full-bleed flow ] [ pl-container pt-900 space-700 ]">
+    <h1 class="[ text-700 measure-micro-xs mr-gutter lg:text-900 ]">{{ home.intro.headline }}</h1>
+    <div class="[ flow ] [ lg:pl-tiny ]">
+        <p class="[ text-400 leading-tight measure-short mr-gutter md:text-500 ]">{{ home.intro.text }}</p>
+        <div class="intro__featured-pages">
+            <ul class="intro__featured-pages__list [ cluster-grow ] [ pt-600 pr-container space-300 ]">
+                {% for item in home.intro.featuredPages %}
+                    <li><a class="link [ flow-left ] [ text-250 weight-semi leading-none space-100 ]" href="">{{ '/src/_includes/partials/svg/arrow.svg' | svgContents("fill-current h-100") | safe }}<span>{{ item.name }}</span></a></li>
+                {% endfor %}
+                <li><a class="btn" data-type="secondary" data-size="large" href="{{ home.intro.linkUrl }}">{{ home.intro.linkText }}</a></li>
+            </ul>
+        </div>
+    </div>
+</section>

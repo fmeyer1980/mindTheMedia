@@ -1,0 +1,49 @@
+<footer class="site-foot [ container ] [ mt-900 ]">
+    <div class="site-foot__top">
+        <div class="newsletter">
+            <div class="newsletter__content [ bg-light-glare pr-800 ]">
+                <div class="[ flow ][ pt-800 pl-800 pb-400 space-200 ]">
+                    <p class="h2">Meld dig til vores nyhedsbrev</p>
+                    <p class="[ text-200 weight-semi leading-tight ]">Så sender vi dig værdifulde nyheder om om design, web og markedsføring. Viden du ikke vil undvære.</p>
+                    <p class="[ text-xxs opc-70 ]">Du skal lige vide, hvis du vælger at signe up til vores nyhedsbrev og dermed blive holdt up-to-date med hvad der sker her hos Mindthemedia, så gemmer vi dit navn og din email adresse. Ikke for at være onde i sulet, men ganske enkelt for at vi kan sige pænt hej til dig når vi sender dig nyheder.</p>
+                </div>
+                <form action="">
+                    <div class="[ cluster-grow ] [ space-400 ]">
+                        <label>
+                            <input class="text-250" size="11" type="text" name="Navn" placeholder="Dit navn...">
+                            <span class="text-xxs text-transform-up opc-30">Navn</span>
+                        </label>
+                        <label>
+                            <input class="text-250" size="11" type="email" name="Mail" placeholder="Din mail...">
+                            <span class="text-xxs text-transform-up opc-30">E-mail</span>
+                        </label>
+                        <button class="btn" data-type="secondary">Tilmeld mig</button>
+                    </div>
+                </form>
+            </div>
+            {% if site.newsletter.image.asset %}
+                <div class="newsletter__image-wrapper">
+                    <img srcset="{% croppedUrlFor site.newsletter.image, 500, 500 %} 1x, {% croppedUrlFor site.newsletter.image, 1000, 1000 %} 2x" alt="{{ site.newsletter.image }}">
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="site-foot__bottom [ color-light-glare ]">
+        <div class="inner-wrapper [ bg-dark p-800 ]">
+            <p class="[ h3 weight-normal measure-micro-xxs ]">Lad os tage en snak om hvordan vi kan skabe resultater for dig.</p>
+            <hr />
+            <ul class="contact-info [ flow ] [ space-200 ]">
+                <li>
+                    <span class="[ opc-80 ]">Ring og sig hej til os</span>
+                    <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
+                </li>
+                <li>
+                    <span class="[ opc-80 ]">Skriv en hilsen, vi lover at svare</span>
+                    <a href="mailto:{{ site.mail }}">{{ site.mail }}</a>
+                </li>
+            </ul>
+        </div>
+        <a class="top-link" href="">{{ '/src/_includes/partials/svg/arrow-big.svg' | svgContents("color-dark-shade fill-current h-500") | safe }}</a>
+    </div>
+    
+</footer>

@@ -1,0 +1,17 @@
+.cluster, .cluster-grow {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(var(--space) / 2 * -1);
+
+    > * {
+        margin: calc(var(--space) / 2);
+    }
+}
+
+.cluster-grow{
+
+    > * {
+        flex-grow: 1;
+    }
+
+}

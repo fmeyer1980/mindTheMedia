@@ -1,0 +1,14 @@
+<header class="site-head container" x-data="{menu: false}">
+    <a class="site-head__brand" aria-label="{{ site.name }}" href="/">
+        {{ '/src/_includes/partials/svg/logo.svg' | svgContents("fill-current h-700 md:h-600") | safe }}
+    </a>
+    <button class="site-head__nav-icon" @click="menu = true">
+        <div x-show="!menu">
+            {{ '/src/_includes/partials/svg/menu.svg' | svgContents("fill-current h-400 md:h-300") | safe }}
+        </div>
+        <div x-show="menu">
+            {{ '/src/_includes/partials/svg/menu.svg' | svgContents("fill-current h-400 md:h-300") | safe }}
+        </div>
+    </button>
+    {% include 'partials/site-main-menu.html' %}
+</header>

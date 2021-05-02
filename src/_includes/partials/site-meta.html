@@ -1,0 +1,21 @@
+{% if not metaTitle %}
+	{% set metaTitle = home.meta.title %}
+{% endif %}
+
+{% if not metaDesc %}
+	{% set metaDesc = home.meta.description %}
+{% endif %}
+
+{% set currentUrl = site.url + page.url %}
+
+<title>{{ metaTitle }}</title>
+<link rel="canonical" href="{{ currentUrl }}"/>
+
+<meta property="og:site_name" content="{{ site.name }}"/>
+<meta property="og:title" content="{{ metaTitle }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ currentUrl }}"/>
+
+<meta name="description" content="{{ metaDesc }}"/>
+<meta name="twitter:description" content="{{ metaDesc }}"/>
+<meta property="og:description" content="{{ metaDesc }}"/>

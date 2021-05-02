@@ -1,0 +1,32 @@
+<figure class="post-item">
+    <div class="post-item__image-wrapper">
+        {% if item.mainImage.asset %}
+            <img width="800" height="380" srcset="{% croppedUrlFor item.mainImage, 800, 380 %} 1x, {% croppedUrlFor item.mainImage, 1600, 760 %} 2x" alt="{{ item.mainImage.alt }}">
+        {% endif %}
+    </div>
+    <figcaption class="post-item__content [ bg-light-glare ]">
+        <div class="[ flow ] [ space-300 p-600 pb-500 ]">
+            <h3>{% if item.headline %}{{ item.headline }}{% else %}{{ item.name }}{% endif %}</h3>
+            {% if item.summary %}<p class="text-200 line-clamp">{{ item.summary }}</p>{% endif %}
+            <ul class="[ cluster ] [ space-100 ]">
+                {% for item in item.categoriesPage %}
+                   <li><a href="/tag/{{ item.slug.current }}">{{ item.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </figcaption>
+    <div class="post-item__bottom [ bg-light-glare ]">
+        <div class="post-item__bottom__inner-wrapper">
+            <div class="[ flow-left ] [ space-100 ]">
+                {% if item.author.mainImage.asset %}
+                    <img width="40" height="40" srcset="{% croppedUrlFor item.author.mainImage, 40, 40 %} 1x, {% croppedUrlFor item.author.mainImage, 80, 80 %} 2x" alt="{{ item.author.mainImage.alt }}">
+                {% endif %}
+                <div>
+                    <p class="[ text-xs weight-bold text-transform-up leading-none ]">{{ item.author.name }}</p>
+                    {% if item.publishedAt %}<time class="[ text-xs leading-none opc-80 ]" datetime="{{ item.publishedAt | w3DateFilter }}">{{ item.publishedAt | dateFilter }}</time>{% endif %}
+                </div>
+            </div>
+            <a class="btn" data-type="secondary" data-size="small" href="/blog/{{ item.slug.current }}/" class="post-list__link">Læs mere her</a>
+        </div>
+    </div>
+</figure>

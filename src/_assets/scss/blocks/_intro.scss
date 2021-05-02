@@ -1,0 +1,35 @@
+.intro {
+
+   &__featured-pages{
+        border-top: 1px solid rgba(get-color('dark-shade'), .06);
+        padding-bottom: get-size('800');
+        background-image: linear-gradient(to right, rgba(get-color('light-shade-dark'), 0), get-color('light-shade-dark'));
+
+        &__list{
+            
+            li{
+                
+                .link{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: color 200ms ease-in-out;
+                    border: 1px solid rgba(get-color('dark-shade'), .06);
+                    padding: calc(.9em + 1px) .8em;
+                    width: 100%;
+                    font-size: get-size('200');
+
+                    &:hover{
+                        color: get-color('primary-shade');
+                    }
+                }
+                
+                .btn{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+}

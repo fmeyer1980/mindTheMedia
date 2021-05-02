@@ -1,0 +1,38 @@
+body {
+  @include apply-utility('font', 'base');
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: get-color('light-shade');
+  color: get-color('dark-shade');
+  @include apply-utility('leading', 'normal');
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background-color: get-color('primary');
+  color: get-color('dark-shade');
+}
+
+.fill-current {
+  fill: currentColor;
+}
+
+.stroke-current {
+  stroke: currentColor;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.ring{
+  box-shadow: 0 0 #0000
+}

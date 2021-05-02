@@ -1,0 +1,23 @@
+.featured-services{
+
+    &__list{
+        
+        &__item{
+            display: flex;
+            align-items: flex-start;
+
+            svg{
+                stroke: get-color('primary');
+                margin-right: get-size('400');
+                width: get-size('600');
+                flex-shrink: 0;
+                margin-top: .4rem;
+            }
+
+            .content{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

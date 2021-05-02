@@ -1,0 +1,28 @@
+.site-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px rgba(get-color('dark-shade'), .06);
+  padding-top: get-size('200');
+  padding-bottom: get-size('200');
+  
+  &__brand{
+    margin: 0.2rem get-size('100');
+  }
+
+  &__nav-icon{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  &__main-nav{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90%;
+    max-width: 30rem;
+    height: 100%;
+    z-index: 99;
+  }
+}

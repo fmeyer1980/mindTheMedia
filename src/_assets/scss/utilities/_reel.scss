@@ -1,0 +1,37 @@
+.reel {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: get-color('light');
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: get-color('dark-glare');
+  }
+
+  > * {
+    flex-shrink: 0;
+  }
+
+  // &[data-type='full-width'] {
+    
+  //   &::before{
+  //     content: "";
+  //     position: absolute;
+  //     bottom: 0;
+  //     right: 0;
+  //     width: var(--gutter);
+  //     height: var(--size-300);
+  //     background-color: get-color('light-glare');
+  //     z-index: 100;
+  //   }
+ 
+  // }
+}

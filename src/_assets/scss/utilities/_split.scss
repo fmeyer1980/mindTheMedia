@@ -1,0 +1,21 @@
+.split {
+  display: flex;
+  flex-direction: column;
+
+  > * + * {
+    margin-top: get-size('900');
+  }
+
+  @include media-query('md') {
+    flex-direction: row;
+
+    > * + * {
+      margin-top: 0;
+      margin-left: get-size('900');
+    }
+  }
+
+  > * {
+    flex-basis: 100%;
+  }
+}

@@ -1,0 +1,29 @@
+<section class="featured-cases [ full-bleed ] [ color-light-glare space-none ]">
+   <div class="pl-container">
+        <ul class="featured-cases__list [ reel ]">
+            {% for item in home.featuredCases %}
+            <li class="featured-cases__list__item [ mb-400 mr-300 xl:mr-400 bg-dark ]">
+                <div class="content [ flow ] [ space-300 ]">
+                    <div class="[ text-100 text-transform-up color-primary ] ">                    
+                        {% for item in item.services %}
+                            {% if loop.last %}
+                                <span>{{ item }}</span>
+                            {% else %}
+                                <span>{{ item }},</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="h3 md:text-500 [ space-100 ]">{{ item.headline }}</p>
+                    <p class="line-clamp leading-tight opc-80">{{ item.summary }}</p>
+                    <a class="btn" data-type="primary" data-size="small" href="">Læs om {{ item.name | lower }}</a>
+                </div>
+                <div class="image-wrapper">
+                    {% if item.mainImage.asset %}
+                        <img class="[ w-full ]" width="930" height="575" loading="lazy" srcset="{% croppedUrlFor item.mainImage, 930, 575 %} 1x, {% croppedUrlFor item.mainImage, 930, 575 %} 2x" alt="{{ site.cta.imageAlt }}" src="{% croppedUrlFor item.mainImage, 500, 400 %}" alt="{{ item.mainImage.alt }}">
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+   </div>
+</section>

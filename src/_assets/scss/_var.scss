@@ -1,0 +1,23 @@
+:root {
+  --gutter: var(--size-400);
+  --container-width: 71.25rem;
+  --container-padding: var(--gutter);
+  --primary-color: #976D35;
+  @include media-query('xl') {
+    --container-padding: calc((100vw - var(--container-width)) / 2);
+  }
+
+  --size-xs: clamp(0.51rem, 0.48rem + 0.12vw, 0.58rem);
+  --size-sm: clamp(0.61rem, 0.57rem + 0.19vw, 0.72rem);
+  --size-100: clamp(0.73rem, 0.67rem + 0.28vw, 0.90rem);
+  --size-200: clamp(0.88rem, 0.79rem + 0.42vw, 1.13rem);
+  --size-300: clamp(1.05rem, 0.93rem + 0.59vw, 1.41rem);
+  --size-400: clamp(1.26rem, 1.09rem + 0.83vw, 1.76rem);
+  --size-500: clamp(1.51rem, 1.28rem + 1.14vw, 2.20rem);
+  --size-600: clamp(1.81rem, 1.50rem + 1.55vw, 2.75rem);
+  --size-700: clamp(2.18rem, 1.76rem + 2.09vw, 3.43rem);
+  --size-800: clamp(2.61rem, 2.05rem + 2.80vw, 4.29rem);
+  --size-900: clamp(3.14rem, 2.39rem + 3.72vw, 5.36rem);
+  --size-lg: clamp(3.76rem, 2.78rem + 4.91vw, 6.71rem);
+  --size-xl: clamp(4.51rem, 3.23rem + 6.44vw, 8.38rem);
+}

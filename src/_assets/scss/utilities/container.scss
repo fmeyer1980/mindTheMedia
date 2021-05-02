@@ -1,0 +1,6 @@
+.container {
+  padding-left: calc(((100% - var(--container-width)) / 2) - var(--gutter));
+  padding-right: calc(((100% - var(--container-width)) / 2) - var(--gutter));
+  border-left: var(--gutter) solid transparent;
+  border-right: var(--gutter) solid transparent;
+}

@@ -1,0 +1,14 @@
+<div class="[ dot-shadow panel ] [ bg-secondary-glare ]" id="post-list">
+    <div class="[ wrapper ] [ flow space-700 ]">
+      {% if postListHeadline %}
+         <h2 class="[ headline ] [ measure-micro ]">{{ postListHeadline }}</h2>
+      {% endif %}
+      <div>
+        <article class="[ post-list ] [ flow ]">
+          {% for item in postListItems %}
+            {% include 'partials/post-item.html' %}
+          {% endfor %}
+        </article>
+      </div>
+    </div>
+  </div>

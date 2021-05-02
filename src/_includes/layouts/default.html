@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+{% set pageCriticalStyles = ['css/page.css']%}
+
+{% set metaTitle = pages.meta.title %}
+{% set metaDesc = pages.meta.description %}
+
+{% set bannerTitle = pages.headline or pages.title %}
+{% set bannerSummary = pages.summary %}
+{% set bannerImage = pages.mainImage %}
+
+
+{% block content %}
+    {% include 'partials/banner.html' %}
+    <div>
+        <article class="page-content [ flow ]">
+            {% if pages.body %}
+                {{ pages.body | markdownify | safe }}
+            {% endif %}
+        </article>
+    </div>
+{% endblock %}

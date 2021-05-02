@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+{% set pageCriticalStyles = ['css/home.css']%}
+{% set metaTitle = home.meta.title %}
+{% set metaDesc = home.meta.description %}
+
+{% set ctaText = site.ctaText %}
+
+{% block content %}
+	{% include 'partials/intro.html' %}
+	{% include 'partials/featured-cases.html' %}
+	<article class="[ post-list ] [ flow ]">
+		{% for item in posts %} 
+			{% if loop.first %}
+				{% include 'partials/post-item.html' %}
+			{% endif %}
+		{% endfor %}
+	</article>
+	<article class="about [ bg-dark color-light-glare p-800 ]">
+		<div class="[ flow ] [ space-300 ]">
+			<h3 class="[ text-500 measure-short ]">{{ home.about.headline }}</h3>
+			<p class="[ text-250 measure-normal ]">{{ home.about.text }}</p>
+			<a class="btn [ space-500 ]" data-type="primary" data-size="small" href="{{ home.about.link.slug.current }}">Læs mere om {{ home.about.link.name | lower }}</a>
+		</div>
+	</article>
+{% endblock %}
